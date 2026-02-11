@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>result</title>
+<style>
+h1
+{
+background-color:darkgreen;
+color:white;
+text-align:center;
+}
+Body
+{
+margin:1px;
+padding:0px;
+}
+input
+{
+height:0.5cm;
+width:1cm;
+}
+</style>
+<script>
+function res()
+{
+var a=document.getElementById("ma").value;
+var c=document.getElementById("sc").value;
+var d=document.getElementById("sa").value;
+var e=document.getElementById("ss").value;
+var f=document.getElementById("hin").value;
+
+if(a==""||c==""||d==""||e==""||f=="")
+{
+alert ("All fields are mandatory");
+}
+else
+{
+a=parseInt(a);
+c=parseInt(c);
+d=parseInt(d);
+e=parseInt(e);
+f=parseInt(f);
+
+var per=(a+c+d+e+f)*100/500;
+
+document.getElementById("d1").innerHTML="Total = "+(a+c+d+e+f);
+document.getElementById("d2").innerHTML="Percentage = "+per+"%";
+
+if(per>=60)
+{
+document.getElementById("d3").innerHTML="Congrats you achieved 1st Rank";
+}
+else if(per>=40)
+{
+document.getElementById("d3").innerHTML="Congrats you achieved 2nd Rank";
+}
+else if(per>=33)
+{
+document.getElementById("d3").innerHTML="Congrats you achieved 3rd Rank";
+}
+else
+{ 
+document.getElementById("d3").innerHTML="Sorry You are Fail";
+}
+}
+}
+function clr()
+{
+document.getElementById("ma").value="";
+document.getElementById("sc").value="";
+document.getElementById("sa").value="";
+document.getElementById("ss").value="";
+document.getElementById("hin").value="";
+document.getElementById("d1").innerHTML="";
+document.getElementById("d2").innerHTML="";
+document.getElementById("d3").innerHTML="";
+}
+</script>
+</head>
+<body>
+<h1>Cheak Reasult Status</h1>
+<form>
+Maths:<input  type="text"id="ma">
+Science:<input  type="text" id="sc">
+Sanskrit:<input  type="text"id="sa">
+Hindi:<input  type="text" id="hin">
+S.S.T:<input type="text" id="ss">
+<button  type="button"onclick="res()">Cheak Reasult</button>
+<button  type="button"onclick="clr()">Clear</button>
+<p id="d1"></p>
+<p id="d2"></p>
+<p id="d3"></p>
+</form>
+</body>
+</html>
